@@ -20,7 +20,7 @@ public class Main1 {
         //secondVersion(7);
         //System.out.println(plus(7, 12));
         //System.out.println(minus(10, 4));
-        //multiply(7, 7);
+        System.out.println(multiply(9, 6));
 
     }
 
@@ -76,24 +76,21 @@ public class Main1 {
     }
 
     //Умножение с использованием логических операций
-    public static void multiply(int a, int b) {
+    public static int multiply(int a, int b) {
+        int i=0, c=0;
+        while(b!=0){
+          while ((b & 1) == 0) {
+             i++;
+             b = b >> 1;
+          }
 
-        if (b == 0) {
-            System.out.println(0);
-        } else {
-            int c=a;
-            while (b != 0) {
-                int i = 1;
-                while ((b & 1) == 0) {
-                    i++;
-                    b = b >> 1;
-                }
-                c = a << i;
-                a=plus(a, c);
-            }
-            System.out.println(a);
+          a=a<<i;
+          c=plus(c, a);
+          b=b>>1;
+          i=1;
+
         }
-
+        return c;
     }
 }
 

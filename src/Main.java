@@ -21,8 +21,8 @@ public class Main {
         first(a); */
         //multiplication(false,false,false,false,false,true,false,true,
                 //false,false,false,false,false,true,true,true);
-        plus3(false,false,false,false,false,true,false,true,
-             false,false,false,false,false,true,true,true);
+        //plus3(false,false,false,false,false,true,false,true,
+             //false,false,false,false,false,true,true,true);
         //minus(false,false,false,false,false,true,true,true,
                 //false,false,false,false,false,false,false,true);
     }
