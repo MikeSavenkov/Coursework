@@ -22,11 +22,12 @@ public class Main1 {
         //System.out.println(plus(7, 12));
         //System.out.println(minus(10, 4));
         //System.out.println(multiply(9, 6));
-        //System.out.println(dop_9(-35));
-        //dop_9(-34) ;
-        plusDop_9(34, 523);                    //01-091
-        //minusDop_9(53, 7);
-
+        //addition9(-10);
+        //plusAddition9(-45, -38);
+        //minusAddition9(53, 7);
+        //addition10(-10);
+        //plusAddition10(34, 523);
+        //minusAddition10(53, 7);
     }
 
     //Перевод десятичного числа в двоичную систему
@@ -96,16 +97,15 @@ public class Main1 {
         return c;
     }
 
-    public static Integer dop_9(int a){
-        int b = 0;
+    //Дополнение  до 9
+    public static void addition9(int a){
         int c,g;
         String temp = "";
         if (a==0)
-            System.out.print(0);
+            System.out.println(0);
         else{
             if(a>0){
-                b = b>>>1;
-                System.out.print(b);
+                System.out.println("0"+a);
             }
             else{
                 a = abs(a);
@@ -115,28 +115,49 @@ public class Main1 {
                     g = 9-c;
                     temp = g + temp;
                   }
-                  System.out.println("9"+temp);
+               System.out.println("9"+temp);
+            }
+        }
+    }
+    public static void plusDop_9 (int a, int b){
+
+    }
+
+    public static void minusDop_9 (int a, int b){
+
+    }
+
+    //Дополнение  до 10
+    public static void addition10(int a){
+        int b,c,g;
+        String temp = "";
+        if (a==0)
+            System.out.println(0);
+        else{
+            if(a>0){
+                System.out.println("0"+a);
+            }
+            else{
+                a = abs(a);
+                while (a != 0){
+                    c = a%10;
+                    a = a/10;
+                    g = 9-c;
+                    temp = g + temp;
+                }
+                b = Integer.parseInt("9"+temp);
+                System.out.println(b+1);
             }
 
         }
-
-        return a;
     }
-    public static void plusDop_9 (int a, int b){
-        int c;
-        dop_9(a);
-        dop_9(b);
-        c = a + b;
-        System.out.println(c);
+
+    public static void plusDop_10 (int a, int b){
 
     }
-    public static void minusDop_9 (int a, int b){
-        int c;
-        dop_9(a);
-        dop_9(b);
-        c = a - b;
 
-        System.out.println(dop_9(c));
+    public static void minusDop_10 (int a, int b){
+
     }
 
 }
