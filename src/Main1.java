@@ -22,8 +22,8 @@ public class Main1 {
         //System.out.println(plus(7, 12));
         //System.out.println(minus(10, 4));
         //System.out.println(multiply(9, 6));
-        //addition9(-10);
-        //plusAddition9(-45, -38);
+        //System.out.println(addition9(-6));
+        plusDop_9(4, 6);
         //minusAddition9(53, 7);
         //addition10(-10);
         //plusAddition10(34, 523);
@@ -95,31 +95,71 @@ public class Main1 {
             i=1;
         }
         return c;
+
     }
 
-    //Дополнение  до 9
-    public static void addition9(int a){
-        int c,g;
+    //Дополнение до 9
+    public static Integer addition9(int a){
+        int c,g,k;
+        int i = 8;
         String temp = "";
         if (a==0)
-            System.out.println(0);
+            return 0;
         else{
             if(a>0){
-                System.out.println("0"+a);
+                String result = "0"+a;
+                k = Integer.parseInt(result);
+                return k;
             }
             else{
                 a = abs(a);
-                  while (a != 0){
+                while (i!=0){
                     c = a%10;
                     a = a/10;
                     g = 9-c;
                     temp = g + temp;
-                  }
-               System.out.println("9"+temp);
+                    i--;
+                }
+                k=Integer.parseInt(temp);
+                return k;
             }
+
         }
     }
-    public static void plusDop_9 (int a, int b){
+
+    public static void plusDop_9 (int a, int b) {
+        int first = addition9(a);
+        int second = addition9(b);
+        int sum = first + second;
+        int i = 8, g, c, result;
+        String temp = "";
+        sum++;
+        System.out.println(sum + " " + first + " " + second);
+
+        if(a>=0 && b>=0){
+           String k = "0"+a;
+           result = Integer.parseInt(k);
+
+        }
+        else {
+            while (i != 0) {
+                c = sum % 10;
+                sum = sum / 10;
+                g = 9 - c;
+                temp = g + temp;
+                i--;
+            }
+
+            result = Integer.parseInt(temp);
+
+            if (a < 0 && b < 0 || a<0 && a>b || b<0 && b>a) {
+
+                System.out.println(-result);
+
+            }
+        }
+
+
 
     }
 
